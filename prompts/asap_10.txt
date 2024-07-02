@@ -1,0 +1,48 @@
+Brandi and Jerry did the following controlled experiment to find out how the color of an object affects its temperature.
+
+Question: What is the effect of different lid colors on the air temperature inside a glass jar exposed to a lamp?
+
+Hypothesis: The darker the lid color, the greater the increase in air temperature in the glass jar, because darker colors absorb more energy.
+
+Materials:
+glass jar
+lamp
+four colored lids: black, dark gray, light gray, and white
+thermometer
+meterstick
+stopwatch
+
+Controlled Experiment Setup
+[Image: The image shows an experimental setup for measuring the temperature inside a glass jar. The setup consists of a lamp positioned above a glass jar, which has a black lid. Inside the jar, there is a thermometer to measure the temperature. The entire setup is placed on a table. The lamp provides heat, while the black lid likely helps to trap the heat inside the jar.]
+ 
+Procedure:
+1.	Put the black lid with the attached thermometer on the glass jar.
+2.	Make sure the starting temperature inside the jar is 24° C.
+3.	Place lamp 5 centimeters away from the lid and turn on the lamp.
+4.	After 10 minutes measure the air temperature inside the glass jar and record as Trial 1.
+5.	Turn off lamp and wait until the air in the jar returns to the starting temperature.
+6.	Repeat steps 2 through 5 for Trials 2 and 3.
+7.	Repeat steps 1 through 6 for the dark gray, light gray, and white lids.
+8.	Calculate and record the average air temperature for each lid color.
+
+Data: 
+Lid Color vs. Air Temperature Inside Glass Jar
+
+Lid Color	Air Temperature Inside Glass Jar After 10 Minutes (°C)
+Trial 1
+Black	54
+Dark gray	48
+Light gray	44
+White	42
+Note: Starting temperature was 24°C for every trial.
+ 
+
+
+
+
+Prompt: Brandi and Jerry were designing a doghouse. Use the results from the experiment to describe the best paint color for the doghouse.
+
+In your description, be sure to:
+-	Choose a paint color. 
+-	Describe how that color might affect the inside of the doghouse.
+-	Use results from the experiment to support your description.

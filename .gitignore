@@ -1,3 +1,4 @@
 doc2vec_model/*
 *.bin*
 venv/
+updated_features/
