@@ -1,0 +1,1 @@
+Explain how pandas in China are similar to koalas in Australia and how they both are different from pythons. Support your response with information from the article.
