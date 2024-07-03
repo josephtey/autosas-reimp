@@ -3,3 +3,5 @@ doc2vec_model/*
 venv/
 updated_features/
 .env
+all_articles.json
+weighted_keywords.json
