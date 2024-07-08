@@ -5,3 +5,5 @@ updated_features/
 .env
 all_articles.json
 weighted_keywords.json
+results/
+essay_set_dfs/
