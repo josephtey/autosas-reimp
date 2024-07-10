@@ -5,6 +5,7 @@ from pprint import pprint
 from collections import Counter
 import textstat
 import spacy
+from utils.helpers import load_only_prompt, load_prompt
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -24,15 +25,14 @@ LOGICAL_OPERATORS = {
 class FeatureExtractor:
     def __init__(
         self,
-        prompts,
-        only_prompts,
+        set_id,
         word2vec_model,
         doc2vec_model,
         ngram_results,
         weighted_keywords,
     ):
-        self.prompts = prompts
-        self.only_prompts = only_prompts
+        self.prompt = load_prompt(set_id)
+        self.only_prompt = load_only_prompt(set_id)
         self.word2vec_model = word2vec_model
         self.doc2vec_model = doc2vec_model
         self.ngram_results = ngram_results
@@ -56,7 +56,7 @@ class FeatureExtractor:
 
         return vector
 
-    def pos(self, setnumber, student_answer):
+    def pos(self, student_answer):
         tokens = word_tokenize(student_answer)
         pos_tags = pos_tag(tokens)
 
@@ -70,14 +70,13 @@ class FeatureExtractor:
 
         # Generate a vector for n-grams indicating overlap with ngram_results
         overlap_vector = [
-            1 if ngram in all_ngrams else 0 for ngram in self.ngram_results[setnumber]
+            1 if ngram in all_ngrams else 0 for ngram in self.ngram_results
         ]
         return overlap_vector
 
-    def prompt_overlap(self, setnumber, student_answer):
-        prompt = self.only_prompts[setnumber]
+    def prompt_overlap(self, student_answer):
 
-        prompt_tokens = set(word_tokenize(prompt))
+        prompt_tokens = set(word_tokenize(self.prompt))
         answer_tokens = set(word_tokenize(student_answer))
 
         # Calculate the number of overlapping words
@@ -88,8 +87,8 @@ class FeatureExtractor:
 
         return [overlap_percentage]
 
-    def weighted_domain_specific_keywords(self, setnumber, student_answer):
-        keywords_dict = self.weighted_keywords[setnumber]
+    def weighted_domain_specific_keywords(self, student_answer):
+        keywords_dict = self.weighted_keywords
 
         max_value = max(keywords_dict.values())
         min_value = min(keywords_dict.values())
@@ -113,10 +112,9 @@ class FeatureExtractor:
 
         return weighted_keywords_multiplied
 
-    def lexical_overlap(self, setnumber, student_answer):
-        prompt = self.prompts[setnumber]
+    def lexical_overlap(self, student_answer):
 
-        prompt_tokens = set(word_tokenize(prompt))
+        prompt_tokens = set(word_tokenize(self.prompt))
         answer_tokens = set(word_tokenize(student_answer))
 
         # Calculate the number of overlapping words
